@@ -30,7 +30,7 @@ int main(int argc, char const *argv[]) {
     __m256i long_vec = _mm256_set1_epi64x(4);
 
     long long* lo = (long long*) &long_vec;
-    printf("long long:\t%d, %d, %d, %d\n", lo[0], lo[1], lo[2], lo[3]);
+    printf("long long:\t%llu, %llu, %llu, %llu\n", lo[0], lo[1], lo[2], lo[3]);
 
     // 16-bit integer
     __m256i short_vec = _mm256_set1_epi16(5);
