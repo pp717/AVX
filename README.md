@@ -1,4 +1,4 @@
-# AVX / AVX2 Intrinsics Example Code
+# AVX / AVX2 
 
 <!-- TOC -->
 
