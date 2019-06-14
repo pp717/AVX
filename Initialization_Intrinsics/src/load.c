@@ -2,7 +2,7 @@
  * Author:  TripleZ<me@triplez.cn>
  * Date:    2018-08-17
  */
-
+#include <malloc.h>
 #include <immintrin.h>
 #include <stdio.h>
 
@@ -10,7 +10,7 @@ int main(int argc, char const *argv[]) {
     
     // Single-precision
     int i;
-    float* aligned_floats = (float*) aligned_alloc(32, 8 * 8 * sizeof(float));
+    float* aligned_floats = (float*) _aligned_malloc(8 * 8 * sizeof(float),32 );
     for (i = 0; i < 8; i++) {
         aligned_floats[i] = (float)(i) + 1.0;
     }
@@ -21,7 +21,7 @@ int main(int argc, char const *argv[]) {
     printf("float:\t\t%f, %f, %f, %f, %f, %f, %f, %f\n", flo[0], flo[1], flo[2], flo[3], flo[4], flo[5], flo[6], flo[7]);
 
     // Double-precision
-    double* aligned_doubles = (double*) aligned_alloc(32, 4 * 8 * sizeof(double));
+    double* aligned_doubles = (double*) _aligned_malloc(4 * 8 * sizeof(double),32);
     for (i = 0; i < 4; i++) {
         aligned_doubles[i] = (double)(i) + 1.0;
     }
@@ -32,7 +32,7 @@ int main(int argc, char const *argv[]) {
     printf("double:\t\t%lf, %lf, %lf, %lf\n", dou[0], dou[1], dou[2], dou[3]);
 
     // 32-bit Integer
-    int* aligned_int = (int*) aligned_alloc(32, 8 * 8 * sizeof(int));
+    int* aligned_int = (int*) _aligned_malloc(8 * 8 * sizeof(int),32);
     for (i = 0; i < 8; i++) {
         aligned_int[i] = i + 1;
     }

@@ -33,7 +33,7 @@ int main(int argc, char const *argv[]) {
     __m256i epi32_result = _mm256_mul_epi32(epi32_vec_0, epi32_vec_1);
 
     long long int* i = (long long int*) &epi32_result;
-    printf("signed int:\t%lld, %lld, %lld, %lld\n", i[0], i[1], i[2], i[3]);
+    printf("signed int:\t%I64d, %I64d, %I64d, %I64d\n", i[0], i[1], i[2], i[3]);
 
     // Unsigned 32-bit integer multiplication (AVX2)
     __m256i epu32_vec_0 = _mm256_setr_epi32((unsigned int)-1, (unsigned int)-1, 3, 3, 4, 4, 5, 5);
@@ -42,7 +42,7 @@ int main(int argc, char const *argv[]) {
     __m256i epu32_result = _mm256_mul_epu32(epu32_vec_0, epu32_vec_1);
 
     long long int* u = (long long int*) &epu32_result;
-    printf("unsigned int:\t%lld, %lld, %lld, %lld\n", u[0], u[1], u[2], u[3]);
+    printf("unsigned int:\t%I64d, %I64d, %I64d, %I64d\n", u[0], u[1], u[2], u[3]);
 
     return 0;
 }

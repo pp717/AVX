@@ -71,7 +71,7 @@ int main(int argc, char const *argv[]) {
     __m128i int64_vec_128 = _mm_maskload_epi64(int64_128, mask_128_epi64);
 
     long long int* i_v_64_128 = (long long int*) &int64_vec_128;
-    printf("long long:\t%lld, %lld\n", i_v_64_128[0], i_v_64_128[1]);
+    printf("long long:\t%I64d, %I64d\n", i_v_64_128[0], i_v_64_128[1]);
 
 
     // Mask-load 256-bit 32-bit-integer vector (AVX2)
@@ -93,7 +93,7 @@ int main(int argc, char const *argv[]) {
     __m256i int64_vec_256 = _mm256_maskload_epi64(int64_256, mask_256_epi64);
 
     long long int* i_v_64_256 = (long long int*) &int64_vec_256;
-    printf("long long:\t%lld, %lld, %lld, %lld\n", i_v_64_256[0], i_v_64_256[1], i_v_64_256[2], i_v_64_256[3]);
+    printf("long long:\t%I64d, %I64d, %I64d, %I64d\n", i_v_64_256[0], i_v_64_256[1], i_v_64_256[2], i_v_64_256[3]);
 
 
     return 0;

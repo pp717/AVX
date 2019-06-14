@@ -22,7 +22,7 @@ int main(int argc, char const *argv[]) {
     __m256i epi64_256_result = _mm256_permute4x64_epi64(epi64_256_vec_0, 0b10011000);
 
     long long int* i = (long long int*) &epi64_256_result;
-    printf("long long int:\t %lld, %lld, %lld, %lld\n", i[0], i[1], i[2], i[3]);
+    printf("long long int:\t %I64d, %I64d, %I64d, %I64d\n", i[0], i[1], i[2], i[3]);
 
     return 0;
 }

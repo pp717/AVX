@@ -60,7 +60,7 @@ int main(int argc, char const *argv[]) {
     __m256i epi64_result = _mm256_sub_epi64(epi64_vec_0, epi64_vec_1);
 
     long long int* lo = (long long int*) &epi64_result;
-    printf("long long:\t%lld, %lld, %lld, %lld\n", lo[0], lo[1], lo[2], lo[3]);
+    printf("long long:\t%I64d, %I64d, %I64d, %I64d\n", lo[0], lo[1], lo[2], lo[3]);
 
     return 0;
 }
